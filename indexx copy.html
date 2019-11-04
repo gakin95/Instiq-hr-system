@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>Instiq PR System</title>
+  <style>
+    header{
+        background: url(img/monitor.jpg);
+        background-size: cover;
+        background-position: bottom;
+        min-height:100vh;
+    }
+   
+    section{
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+    }
+    .tabs .indicator{
+      background-color: #ab0000;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background: transparent;
+    }
+    
+    @media screen and (max-width: 670px) {
+        header{
+            min-height: 500px;
+        }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <header>
+      <nav class="nav-wrapper  " style="background: rgba(0, 0, 0, .7)">
+          <div class="container">
+              <a href="#" class="brand-logo ">Insti<span class="red-text"><b>Q</b></span> Data Center</a>
+              <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a href="#photos">photos</a></li>
+                  <li><a href="#services">services</a></li>
+                  <li><a href="#contact">contact</a></li>
+                  <li><a href="">Staff login</a></li>
+              </ul>
+              <ul class="sidenav grey lighten-2" id="mobile-menu">
+                <li><a href="#">photos</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="">Staff login</a></li>
+              </ul>
+          </div>
+
+      </nav>
+  </header>
+
+  <!-- photo / grid -->
+
+  <section class="container scrollspy" id="photos">
+    <div class="row">
+      <div class="col s12 l4 ">
+        <img src="/img/data1.jpg" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1">
+        <h2 class="indigo-text text-darken-4">Monday series</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt illum provident expedita impedit, 
+          neque reprehenderit eum? Fuga voluptatum ut corrupti repudiandae ipsum dicta dolor temporibus,
+           officiis laudantium nam pariatur?</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l4 push-l7 offset-l1">
+          <img src="/img/city.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 pull-l5 right-aligh offset-l1">
+          <h5 class="indigo-text text-darken-4">Measures that drives performance</h5>
+          <p>Life is all about performance. A lazy man does not drive. He does'nt</p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s12 l4">
+            <img src="/img/nature.jpg" alt="" class="responsive-img materialboxed">
+          </div>
+          <div class="col s12 l6 offset-l1">
+            <h2 class="indigo-text text-darken-4">Highlight of discussion</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt illum provident expedita impedit, 
+              neque reprehenderit eum? Fuga voluptatum ut corrupti repudiandae ipsum dicta dolor temporibus,
+               officiis laudantium nam pariatur?</p>
+          </div>
+        </div>
+  </section>
+
+  <!-- parallax -->
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="img/programming.png" alt="" class="responsive-img">
+    </div>
+  </div>
+
+  <!-- services / tabs -->
+  <section class="container section scrollspy" id="services">
+    <div class="row">
+      <div class="col s12 l4">
+        <h2 class="red-text text-darken-4">What we do</h2>
+        <p > We are gradually but firmly instilling technological ideas through products and services that position and 
+          assist our clients in delivering unequaled value to its customers across Africa.</p>
+        <p >We develop innovation driven solutions with key strategic partners to meet the need
+           or objective of our customers in Nigeria and Africa.</p>     
+      </div>
+      <div class="col s12 l6 offset-l2">
+        <ul class="tabs">
+          <li class="tab col s6">
+            <a href="#photography" class="red-text text-darken-4">PRODUCT</a>
+          </li>
+          <li class="tab col s6">
+            <a href="#editing" class="red-text text-darken-4">SERVICE</a>
+          </li>
+        </ul>
+        <div class="s12" id="photography">
+          <p class="flow-text red-text text-darken-4">TME(Teller Made Eazy)</p>
+          <p> TME as the name implies is a powerful tellering application  The application was designed to suit and
+           make tellering easy for the end users. Its function includes
+           Cash transactions with the slip printing abilities and remote authorization amongst others. </p> 
+           <a href="https://instiq.com/products/" class="btn waves-effect waves-dark red ">
+            VISIT OUR PRODUCTS
+          </a> 
+        </div>
+        <div class="s12" id="editing">
+            <p class="flow-text red-text text-darken-4">IT CONSULTING SERVICES </p>
+            <p> We carry out various consulting services that enhances client’s productivity. Our consulting activities include managed services,
+             outsourcing, project managements, business analysis, process planning and monitoring</p>
+            <a href="https://instiq.com/services/" class="btn  waves-effect waves-dark red ">
+                VISIT OUR SERVICES
+           </a> 
+          </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- parallax -->
+  <div class="parallax-container" >
+    <div class="parallax">
+      <img src="img/stars.jpg" alt="" class="responsive-img">
+    </div>
+  </div>
+  <!-- contact form -->
+  <section class="container section scrollspy" id="contact">
+    <div class="row">
+      <div class=" col s12 l5">
+        <h2 class="indigo-text text-darken-4 ">GET IN TOUCH</h2>
+        <p >64, Adeniyi Jones Avenue,Ikeja,lagos</p>
+        <p >E: info@instiq.com</p>
+        <p> P 01-7100188, +2348076520000</p> 
+      </div>
+      <div class="col s12 l5 offset-l2">
+        <form action="">
+          <div class="input-field">
+            <i class="material-icons prefix blue-text">email</i>
+            <input type="email" id="email">
+            <label for="email">Your Email</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix red-text">lock</i>
+            <input type="password" id="password">
+            <label for="email">Enter Your Password</label>
+          </div>
+          <div class="input-field center">
+            <button class="btn">Submit</button>
+          </div>
+         
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6">
+          <h5>About Us</h5>
+          <p>InstiQ is a leading provider of tech solutions to financial institutions,
+             education sectors and health sectors of all sizes in Africa, the head office is in Lagos,
+              Nigeria. Our success is driven by our people and their dedication to instil customer’s ideas through technological solutions-
+             by partnering with out clients through innovative technologies and capturing new opportunities for their profitable growth.</p>
+          <p>The company develops products that offers as either software as a service or software license . 
+            Our major product lines are focused on business solutions and process improvement.
+            We are partners to a broad range of international software, middle-ware and hardware companies who either add value to  our solutions or whose
+            solutions or whose solutions/hardware are used to deliver extra benefits to new and existing customers.</p>
+        </div>
+        <div class="col s12 l4 offset-l2">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="" class="grey-text text-lighten-3"></a>Linked in</li>
+            <li><a href="" class="grey-text text-lighten-3"></a>Facebook</li>
+            <li><a href="" class="grey-text text-lighten-3"></a>Twitter</li>
+            <li><a href="" class="grey-text text-lighten-3"></a>Instagram</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2019 InstiQ Professional Service</div>
+    </div>
+  </footer>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs(); 
+      $('.scrollspy').scrollSpy();
+    });
+  </script>
+</body>
+</html>

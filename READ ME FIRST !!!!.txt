@@ -1,0 +1,26 @@
+                         : : : : : LOGIN DETAILS : : : : : 
+" USER /EMPLOYEE "
+Email id : gakin95@gmail.com
+Passowrd : googleman
+Empid : EMP2000 (in case of password recovery)
+
+" USER /EMPLOYEE "
+Email id : tolu@instiq.com
+ubaka@instiq.com
+abiodun@instiq.com
+habeeb@instiq.com
+ayotunde@instiq.com
+sonde@instiq.com
+akinrinde@instiq.com
+yetunde@instiq.com
+olasile@instiq.com
+Passowrd : 123456
+Empid : check database (in case of password recovery)
+
+
+For " ADMIN " login click on the admin login then provide username and password
+Email id : admin
+Passowrd : Test@12345
+
+
+
