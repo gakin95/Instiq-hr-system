@@ -2,12 +2,9 @@
                 <div class="side-nav-wrapper">
                     <div class="sidebar-profile">
                         <div class="sidebar-profile-image">
-                            <img src="assets/images/profile-image.png" class="circle" alt="">
-                        </div>
-                        <div class="sidebar-profile-info">
-                    <?php
+                        <?php
 $eid=$_SESSION['eid'];
-$sql = "SELECT FirstName,LastName,EmpId from  tblemployees where id=:eid";
+$sql = "SELECT FirstName,LastName,Passport,EmpId from  tblemployees where id=:eid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 $query->execute();
@@ -17,6 +14,10 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {               ?>
+                            <img src="<?php echo htmlentities($result->Passport)?>" class="circle" alt="">
+                        </div>
+                        <div class="sidebar-profile-info">
+                   
                                 <p><?php echo htmlentities($result->FirstName." ".$result->LastName);?></p>
                                 <span><?php echo htmlentities($result->EmpId)?></span>
                          <?php }} ?>

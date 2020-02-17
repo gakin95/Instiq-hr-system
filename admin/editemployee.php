@@ -113,11 +113,7 @@ $msg="Employee record updated Successfully";
                                            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
                 else if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                         <section>
-                                            <div class="wizard-content">
-                                                <div class="row">
-                                                    <div class="col m6">
-                                                        <div class="row">
-<?php 
+                                        <?php 
 $eid=intval($_GET['empid']);
 $sql = "SELECT * from  tblemployees where id=:eid";
 $query = $dbh -> prepare($sql);
@@ -129,7 +125,14 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {               ?> 
- 
+                                        <div class="center">
+                                        <img src="../<?php echo htmlentities($result->Passport);?>" style=" width: 154px; height:154px" class="circle" alt="EMPLOYEE'S PROFILE PICTURE" />
+                                        </div>
+                                            <div class="wizard-content">
+                                                <div class="row">
+                                                    <div class="col m6">
+                                                        <div class="row">
+
 <div class="input-field col m12 s12 l6">
 <label for="firstName">First name</label>
 <input id="firstName" name="firstName" value="<?php echo htmlentities($result->FirstName);?>"  type="text" required>

@@ -27,8 +27,15 @@ $nextkin=$_POST['kin'];
 $marital=$_POST['marital'];
 $kinaddr=$_POST['kinaddr'];
 $kinphonenum=$_POST['kinnum'];
+$passport=$_FILES['passport'];
+$passport_name=$passport['name'];
+$passport_location = 'uploads/' . time() . '_' . str_replace(' ', '_', $passport['name']);
+//die('passport_location:' . $passport_location);
 
-$sql="update tblemployees set FirstName=:fname,LastName=:lname,Gender=:gender,Dob=:dob,Department=:department,Address=:address,City=:city,Country=:country,Phonenumber=:mobileno,bank=:bank,AccountName=:acctname,AccountNo=:acctnum,NextOfKin=:nextkin,MaritalStatus=:marital,NextOfKinAddr=:kinaddr,NextOfKinPhoneNum=:kinphonenum where EmailId=:eid";
+move_uploaded_file($_FILES["passport"]["tmp_name"], $passport_location);
+
+
+$sql="update tblemployees set FirstName=:fname,Passport=:passport,passport_name=:passport_name,LastName=:lname,Gender=:gender,Dob=:dob,Department=:department,Address=:address,City=:city,Country=:country,Phonenumber=:mobileno,bank=:bank,AccountName=:acctname,AccountNo=:acctnum,NextOfKin=:nextkin,MaritalStatus=:marital,NextOfKinAddr=:kinaddr,NextOfKinPhoneNum=:kinphonenum where EmailId=:eid";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':lname',$lname,PDO::PARAM_STR);
@@ -46,6 +53,8 @@ $query->bindParam(':nextkin',$nextkin,PDO::PARAM_STR);
 $query->bindParam(':marital',$marital,PDO::PARAM_STR);
 $query->bindParam(':kinaddr',$kinaddr,PDO::PARAM_STR);
 $query->bindParam(':kinphonenum',$kinphonenum,PDO::PARAM_STR);
+$query->bindParam(':passport',$passport_location,PDO::PARAM_STR);
+$query->bindParam(':passport_name',$passport_name,PDO::PARAM_STR);
 $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 $query->execute();
 $msg="Employee record updated Successfully";
@@ -108,7 +117,7 @@ $msg="Employee record updated Successfully";
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <form id="example-form" method="post" name="updatemp">
+                                <form id="example-form" method="post" name="updatemp" enctype="multipart/form-data">
                                     <div>
                                         <h3>Update  Info</h3>
                                            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
@@ -249,6 +258,15 @@ foreach($results as $resultt)
 <label for="account-name">Account name</label>
 <input id="acctn" name="acctname" type="text" value="<?php echo htmlentities($result->AccountName);?>" autocomplete="off" required>
 </div>
+<div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" accept=".jpg, .png, .jpeg, .gif,.svg" name="passport">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" value="<?php echo htmlentities($result->passport_name);?>" placeholder="Upload one or more files">
+      </div>
+    </div>
 
                                                             
 

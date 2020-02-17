@@ -29,7 +29,8 @@ echo "<script type='text/javascript'> document.location = 'myprofile.php'; </scr
 
 else{
 
-  echo "<script>alert('Invalid Details');</script>";
+//   echo "<script>alert('Invalid Details');</script>";
+  $php_errormsg = "Your Email or Password is not correct";
 
 }
 
@@ -52,13 +53,16 @@ else{
         <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 
         <!-- Theme Styles -->
         <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+        <link href="index.css" rel="stylesheet" type="text/css"/>
 
 
+         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -109,53 +113,35 @@ else{
                 </div>
             </div>
         </div>
-        <div class="mn-content fixed-sidebar">
-            <header class="mn-header navbar-fixed">
-                <nav class="red darken-4">
-                    <div class="nav-wrapper row">
-                        <section class="material-design-hamburger navigation-toggle">
-                            <a href="#" data-activates="slide-out" class="button-collapse show-on-large material-design-hamburger__icon">
-                                <span class="material-design-hamburger__layer"></span>
-                            </a>
-                        </section>
-                        <div class="header-title col s12 ">
-                            <span class="chapter-title ">InstiQ | Employee  Management </span>
-                        </div>
-
-
-                        <!-- </form> -->
-
-
-                    </div>
-                </nav>
-            </header>
-
-
-            <aside id="slide-out" class="side-nav white fixed">
-                <div class="side-nav-wrapper">
-
-
-                <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion" style="">
-                    <li>&nbsp;</li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="index.php"><i class="material-icons">account_box</i>Employe Login</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="forgot-password.php"><i class="material-icons">account_box</i>Emp Password Recovery</a></li>
-
-                       <li class="no-padding"><a class="waves-effect waves-grey" href="admin/"><i class="material-icons">account_box</i>Admin Login</a></li>
-
-                </ul>
-          <div class="footer">
-                    <p class="copyright">Welcome To <a href="https://instiq.com/" target="_blank"> InstiQ</a>©2019</p>
-
+        <section>
+        <div class="test">
+            <nav class="nav">
+                <div class="nav-wrapper">
+                    <a href="index.php" class="brand-logo" id="nav">
+                        <img src="img/instiq-logo.png" alt="instiq logo">
+                    </a>
+                    <ul id="nav-mobile" class="right ">
+                        <li><a href="admin/" class="admin-login-link">Admin login</a></li>
+                    </ul>
                 </div>
+            </nav>
+                <div class="white-text flow-text">
+                    <h3 class="center wow lightSpeedIn delay-1s ">Instiq management system</h3> 
+                    <!-- <h3 class="center wow fadeInDown delay-2s">Instiq management system</h3>  -->
                 </div>
-            </aside>
+        </div> 
+          <svg id="hero-wave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 1416.99 174.01">
+              <path class="cls-1" d="M0,280.8S283.66,59,608.94,163.56s437.93,150.57,808,10.34v309.54H0v2280.8Z" 
+              transform="translate(0 -135.53)"/>
+          </svg>
+       </section>
+       <section class="sec2">
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title"></h4></div>
-
                           <div class="col s12 m8 l8 offset-l2 offset-m3">
-                              <div class="card white darken-1">
+                              <div class="card white darken-1 card-large-screen">
 
                                   <div class="card-content ">
                                       <span class="card-title" style="font-size:20px;">Employee Login</span>
@@ -170,6 +156,10 @@ else{
                                                    <input id="password" type="password" class="validate" name="password" autocomplete="off" required>
                                                    <label for="password">Password</label>
                                                </div>
+                                               <div>
+                                               <span class="text-danger"><strong><?php echo htmlentities($php_errormsg)?></strong></span>
+                                               </div>
+                                               <a href="forgot-password.php" class="grren">forget password?</a>
                                                <div class="col s12 right-align m-t-sm">
 
                                                    <input type="submit" name="signin" value="Sign in" class=" btn red darken-4">
@@ -182,7 +172,7 @@ else{
                     </div>
                 </div>
             </main>
-
+            </section>
         </div>
         <div class="left-sidebar-hover"></div>
 
@@ -192,6 +182,8 @@ else{
         <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="assets/js/alpha.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js'></script>
+        <script src="index.js"></script>
 
     </body>
 </html>
